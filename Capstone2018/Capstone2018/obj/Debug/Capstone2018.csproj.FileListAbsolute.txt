@@ -23,4 +23,3 @@ C:\Workspaces\Products\InterCapstone\Capstone2018\Capstone2018\bin\Debug\Microso
 C:\Workspaces\Products\InterCapstone\Capstone2018\Capstone2018\bin\Debug\Microsoft.Scripting.Metadata.xml
 C:\Workspaces\Products\InterCapstone\Capstone2018\Capstone2018\obj\Debug\Capstone2018.exe
 C:\Workspaces\Products\InterCapstone\Capstone2018\Capstone2018\obj\Debug\Capstone2018.pdb
-C:\Workspaces\Products\InterCapstone\Capstone2018\Capstone2018\obj\Debug\Capstone2018.csprojResolveAssemblyReference.cache
