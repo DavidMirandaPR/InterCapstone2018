@@ -3,7 +3,7 @@ import cv2
 #activate opencv-env
 # ====================== Step 1 ======================
 #              Load the image and resize
-img = cv2.imread("box.jpg")
+img = cv2.imread("C:/Workspaces/Products/InterCapstone/Capstone2018/Capstone2018/Content/img/box.jpeg")
 img = cv2.resize(img, (400,400))
 cv2.imshow("Original Picture", img)
 
