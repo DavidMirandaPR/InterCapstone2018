@@ -76,6 +76,7 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dashboard.resx">
@@ -623,6 +624,7 @@
     <Content Include="Lib\_weakrefset.py" />
     <Content Include="Lib\__future__.py" />
     <Content Include="Lib\__phello__.foo.py" />
+    <Content Include="Scripts\Python\results.xml" />
     <Content Include="Scripts\Python\shapeRecognition.py" />
     <Content Include="Scripts\Python\test.py" />
   </ItemGroup>

@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Diagnostics;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Capstone2018
 {
@@ -19,10 +21,9 @@ namespace Capstone2018
         string PythonScriptsPath = ConfigurationManager.AppSettings["PythonScriptsPath"];
         string PythonEnvironmentName = ConfigurationManager.AppSettings["PythonEnvironmentName"];
         string PythonFile = "shapeRecognition.py";
-        
-        TextBox txtbx = new TextBox();
-        
-        
+        string XMLPath = ConfigurationManager.AppSettings["XMLPath"];
+        Object myObject = new Object();
+
 
         /// <summary>
         /// Initializes the Windows Form Components
@@ -38,6 +39,7 @@ namespace Capstone2018
         /// </summary>
         private void RunScript_Click(object sender, EventArgs e)
         {
+            //Setup CMD
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;
@@ -45,7 +47,7 @@ namespace Capstone2018
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
             cmd.Start();
-
+            //Activate Python Environment and run Script
             Console.WriteLine("Activating Environment...");
             cmd.StandardInput.WriteLine($"activate {PythonEnvironmentName}");
             cmd.StandardInput.WriteLine($"cd {PythonScriptsPath}");
@@ -53,7 +55,20 @@ namespace Capstone2018
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
+
+            myObject = XMLResultsDeserializer(myObject, XMLPath);
+            ShapeDetectedLabel.Text = $"Shape Detected: {myObject.Shape}";
             Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+        }
+
+        private static Object XMLResultsDeserializer(Object myObject, string path)
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(Object));
+            using (XmlReader reader = XmlReader.Create(path))
+            {
+                myObject = (Object)ser.Deserialize(reader);
+            }
+            return myObject;
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.CurrentEnv = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ShapeDetectedLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -103,11 +104,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Current Environment:";
             // 
+            // ShapeDetectedLabel
+            // 
+            this.ShapeDetectedLabel.AutoSize = true;
+            this.ShapeDetectedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShapeDetectedLabel.Location = new System.Drawing.Point(15, 285);
+            this.ShapeDetectedLabel.Name = "ShapeDetectedLabel";
+            this.ShapeDetectedLabel.Size = new System.Drawing.Size(118, 17);
+            this.ShapeDetectedLabel.TabIndex = 2;
+            this.ShapeDetectedLabel.Text = "Shape Detected: ";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 343);
+            this.Controls.Add(this.ShapeDetectedLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CurrentEnv);
             this.Controls.Add(this.panel1);
@@ -132,6 +144,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label CurrentEnv;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ShapeDetectedLabel;
     }
 }
 
